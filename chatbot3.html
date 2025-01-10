@@ -58,7 +58,7 @@
     <div class="right">
         <div class="input-area">
             <textarea id="botResponse" placeholder="Enter bot's response"></textarea>
-            <button onclick="addBotResponseCell()">Add Bot Response</button>
+            <button onclick="addBotResponseCell()">Send Bot's Response</button>
         </div>
 
     </div>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </template>
-    
+
     <template id="humanResCell">
         <div class="chat-human-msg-cell">
             <!-- <div class="chat-human-avtar">
@@ -95,11 +95,13 @@
     </template>
     <template id="thinkingResCell">
         <div class="chat-thinking-msg-cell">
-            <div class="chat-thinking-image">
-                <img class="chat-thinking-img" src="./img/thinking.svg">
+            <div class="progress-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
             <div class="chat-thinking-msg-container">
-                <span class="chat-thinking-msg"> thinking </span>
+                <span class="chat-thinking-msg"> Agentforce is responding... </span>
             </div>
         </div>
     </template>

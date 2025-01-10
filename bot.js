@@ -28,7 +28,7 @@ function sendMessage() {
     chatPrompt.appendChild(cell);
     document.getElementById('chatInput').value = '';
     // thinking status
-    const thinkingCell = createThinkingCell('Thinking...');
+    const thinkingCell = createThinkingCell('Agentforce is responding...');
     chatPrompt.append(thinkingCell);
 }
 
@@ -89,8 +89,8 @@ function createThinkingCell(msg) {
     const template = document.getElementById("thinkingResCell");
     const clone = template.content.cloneNode(true);
     //set msg
-    const msgContainer = clone.querySelectorAll('.chat-thinking-msg')[0];
-    msgContainer.textContent = msg;
+    // const msgContainer = clone.querySelectorAll('.chat-thinking-msg')[0];
+    // msgContainer.textContent = msg;
     return clone;
 }
 

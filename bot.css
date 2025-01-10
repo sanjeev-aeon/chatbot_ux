@@ -240,6 +240,7 @@ button {
 .chat-thinking-msg-cell{
     display: flex;
     flex-direction: column;
+    margin-left: .25rem;
 }
 .chat-thinking-msg {
     font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
@@ -247,7 +248,44 @@ button {
     font-style: normal;
     font-weight: 400;
 }
-.chat-thinking-image, .chat-thinking-img {
-  height: 30px;
-  width: 30px;
-}
+
+
+/* thinking dot */
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #005290;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: 0 2px;
+    animation: dot-animation 3s infinite;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes dot-animation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
