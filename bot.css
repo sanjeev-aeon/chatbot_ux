@@ -1,3 +1,6 @@
+:root{
+    --font:sans-serif;
+}
 body {
     display: flex;
     height: 100vh;
@@ -68,16 +71,19 @@ button {
     display: flex;
     flex-direction: row;
 }
-.chat-header-min{
- margin-right: 5px;
- flex-grow: 1;
- display:flex;
- flex-direction:row-reverse ;
+
+.chat-header-min {
+    margin-right: 5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row-reverse;
 }
-.chat-header-more{
+
+.chat-header-more {
     margin-right: 10px;
-    
+
 }
+
 .chat-header-button {
     height: 32px;
     min-height: 32px;
@@ -85,7 +91,7 @@ button {
     min-width: 32px;
     cursor: default;
     padding: 0;
-    
+
     border-radius: 0.25rem;
     background-color: #0176d3;
     border: 0
@@ -129,21 +135,43 @@ button {
 }
 
 
-.chat-bot-msg-cell{
+.chat-bot-msg-cell {
     display: flex;
     flex-direction: row;
+    margin-right: 3rem;
 }
 
-.chat-bot-avtar{
-
-}
-.chat-bot-msg-container{
-
-}
-.chat-bot-msg{
-
+.chat-bot-avtar {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5px;
 }
 
-.chat-bot-msg-timestamp{
+.chat-bot-avtar-img {
+    height: 30px;
+    width: 30px;
+}
 
+.chat-bot-msg-container {
+    flex-grow: 1;
+}
+
+.chat-bot-msg {
+    background-color: #f2f2f3;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 0.875em;
+    font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+}
+
+.chat-bot-msg-timestamp {
+    font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+    font-size: 10px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.chat-bot-msg-timestamp-time{
+    font-weight: 400;
 }

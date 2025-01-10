@@ -12,7 +12,7 @@ function addBotResponseCell() {
     const botResponse = document.getElementById('botResponse').value;
     //const botMessage = document.createElement('div');
     //botMessage.textContent = `Bot: ${botResponse}`;
-    const node=createBotmsgCell();
+    const node=createBotmsgCell(botResponse);
     chatPrompt.appendChild(node);
     document.getElementById('botResponse').value = '';
 }
@@ -47,6 +47,15 @@ function enter() {
 function createBotmsgCell(msg, time, icon) {
      const template= document.getElementById("botResCell");
      const clone = template.content.cloneNode(true);
+     //set msg
+     const msgContainer=clone.querySelectorAll('.chat-bot-msg')[0];
+     msgContainer.textContent=msg;
+     //set timestamp
+     const tsContainer=clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
+     const dt=new Date()
+     
+     tsContainer.textContent=dt.toLocaleTimeString();
+
      return clone;
 }
 
