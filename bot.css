@@ -106,8 +106,9 @@ button {
 }
 
 .chat-body {
-    padding: 20px;
-    height: 300px;
+    padding: 20px 20px 20px 10px;
+    /* height:  300px; */
+    height: 55vh;
     overflow-y: auto;
 }
 
@@ -122,7 +123,14 @@ button {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    outline: none;
 }
+.chat-footer input:focus-visible  {
+    box-shadow: none;
+    border: 1px solid  #005290;
+}
+
+
 
 .chat-footer button {
     padding: 10px 15px;
@@ -138,7 +146,7 @@ button {
 .chat-bot-msg-cell {
     display: flex;
     flex-direction: row;
-    margin-right: 3rem;
+    margin:0 3rem 0.25rem 0;
 }
 
 .chat-bot-avtar {
@@ -157,6 +165,7 @@ button {
 }
 
 .chat-bot-msg {
+    overflow-wrap: anywhere;
     background-color: #f2f2f3;
     border-radius: 0.5rem 0.5rem 0.5rem 0;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -174,4 +183,71 @@ button {
 
 .chat-bot-msg-timestamp-time{
     font-weight: 400;
+}
+
+
+
+
+
+.chat-human-msg-cell {
+    display: flex;
+    flex-direction: row;
+    margin:0 0 0.25rem 3rem;
+    justify-content: end;
+}
+
+.chat-human-avtar {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5px;
+}
+
+.chat-human-avtar-img {
+    height: 30px;
+    width: 30px;
+}
+
+.chat-human-msg-container {
+    flex-grow: 0;
+}
+
+.chat-human-msg {
+    overflow-wrap: anywhere;
+    background-color: #005290;
+    color: #ffffff;
+    border-radius: 0.5rem 0.5rem  0 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 0.875em;
+    font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+}
+
+.chat-human-msg-timestamp {
+    font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+    font-size: 10px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.chat-human-msg-timestamp-time{
+    font-weight: 400;
+}
+
+
+
+/* thinking msg cell */
+
+.chat-thinking-msg-cell{
+    display: flex;
+    flex-direction: column;
+}
+.chat-thinking-msg {
+    font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+}
+.chat-thinking-image, .chat-thinking-img {
+  height: 30px;
+  width: 30px;
 }

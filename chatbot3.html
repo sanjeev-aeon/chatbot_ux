@@ -61,22 +61,48 @@
             <button onclick="addBotResponseCell()">Add Bot Response</button>
         </div>
 
-        <template id="botResCell">
-            <div class="chat-bot-msg-cell">
-                <div class="chat-bot-avtar">
-                    <img class="chat-bot-avtar-img" src="./img/bot-avatar.png">
+    </div>
+    <template id="botResCell">
+        <div class="chat-bot-msg-cell">
+            <div class="chat-bot-avtar">
+                <img class="chat-bot-avtar-img" src="./img/bot-avatar.png">
+            </div>
+            <div class="chat-bot-msg-container">
+                <div class="chat-bot-msg">
+                    msg
                 </div>
-                <div class="chat-bot-msg-container">
-                    <div class="chat-bot-msg">
-                        msg
-                    </div>
-                    <div class="chat-bot-msg-timestamp">
-                        <span> Agentforce &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
-                    </div>
+                <div class="chat-bot-msg-timestamp">
+                    <span> Agentforce &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
                 </div>
             </div>
-        </template>
-    </div>
+        </div>
+    </template>
+    
+    <template id="humanResCell">
+        <div class="chat-human-msg-cell">
+            <!-- <div class="chat-human-avtar">
+                <img class="chat-human-avtar-img" src="./img/human-avatar.png">
+            </div> -->
+            <div class="chat-human-msg-container">
+                <div class="chat-human-msg">
+                    msg
+                </div>
+                <div class="chat-human-msg-timestamp">
+                    <span> sent &nbsp;•&nbsp;</span><span class="chat-human-msg-timestamp-time">now</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="thinkingResCell">
+        <div class="chat-thinking-msg-cell">
+            <div class="chat-thinking-image">
+                <img class="chat-thinking-img" src="./img/thinking.svg">
+            </div>
+            <div class="chat-thinking-msg-container">
+                <span class="chat-thinking-msg"> thinking </span>
+            </div>
+        </div>
+    </template>
 </body>
 
 </html>
