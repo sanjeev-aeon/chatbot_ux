@@ -50,7 +50,15 @@
             </div>
             <div class="chat-footer">
                 <input type="text" id="chatInput" placeholder="Type your message...">
-                <!-- <button onclick="sendMessage()">Send</button> -->
+                <button class="chat-footer-button" onclick="sendMessage()">
+                        <svg focusable="false" viewBox="0 0 520 520" class="icon_small">
+                            <g>
+                                <path
+                                    d="M21 445l44-163h186c5 0 10-5 10-10v-20c0-5-5-10-10-10H65L22 82l-2-8c0-7 7-14 15-13l5 1 450 185c6 2 10 8 10 14s-4 11-9 13L40 464l-6 1c-8-1-14-7-14-15z">
+                                </path>
+                            </g>
+                        </svg>
+                </button>
             </div>
         </div>
 
@@ -80,10 +88,10 @@
     <!-- first message -->
     <template id="botJoinedCell">
         <div class="chat-bot-joined-msg-cell">
-                <img class="chat-bot-avtar-img" src="./img/bot-avatar.png">
-                <div class="chat-bot-msg-timestamp">
-                    <span> Agentforce joined &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
-                </div>
+            <img class="chat-bot-avtar-img" src="./img/bot-avatar.png">
+            <div class="chat-bot-msg-timestamp">
+                <span> Agentforce joined &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
+            </div>
         </div>
     </template>
 

@@ -45,11 +45,17 @@ textarea {
 
 button {
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
-
-
+.chat-footer-button{
+    height: 38px;
+    width: 38px;
+}
+.icon_small{
+    height: 20px;
+    width: 20px;
+}
 
 
 
@@ -136,13 +142,15 @@ button {
 
 
 .chat-footer button {
-    padding: 10px 15px;
+    padding: 8px 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #ffffff;
     color: #fff;
     border-radius: 4px;
     margin-left: 10px;
     cursor: pointer;
+    border: 1px solid #ddd;
+    
 }
 
 
