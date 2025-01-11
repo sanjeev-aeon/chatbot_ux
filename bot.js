@@ -93,6 +93,26 @@ function createThinkingCell(msg) {
     // msgContainer.textContent = msg;
     return clone;
 }
+/**
+ * create template cell for botJoined msg
+ * @returns cell
+ */
+function botJoinedCell() {
+    const template = document.getElementById("botJoinedCell");
+    const clone = template.content.cloneNode(true);
+    //set timestamp
+    const tsContainer = clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
+    const dt = new Date()
+    tsContainer.textContent = dt.toLocaleTimeString();
+
+    return clone;
+}
+
+function initPrompt() {
+    const botjoinedMsgCell = botJoinedCell();
+    const chatPrompt = document.getElementById('chatPrompt');
+    chatPrompt.appendChild(botjoinedMsgCell);
+}
 
 /**
  * Replace thinking node
@@ -101,7 +121,11 @@ function createThinkingCell(msg) {
 function replaceThinkingCell(node) {
     const chatPrompt = document.getElementById('chatPrompt');
     const thinkingCell = chatPrompt.querySelectorAll('.chat-thinking-msg-cell')[0];
-    thinkingCell ?.replaceWith(node);
+    if (thinkingCell) {
+        thinkingCell.replaceWith(node);
+    }else{
+        chatPrompt.appendChild(node)
+    }
 }
 
 // init
@@ -109,6 +133,7 @@ function replaceThinkingCell(node) {
 document.addEventListener('DOMContentLoaded',
     (e) => {
         console.log(e);
+        initPrompt();
         enter();
 
     });

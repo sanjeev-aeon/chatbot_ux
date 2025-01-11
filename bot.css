@@ -146,7 +146,7 @@ button {
 .chat-bot-msg-cell {
     display: flex;
     flex-direction: row;
-    margin:0 3rem 0.25rem 0;
+    margin:0.15rem 3rem 0.25rem 0;
 }
 
 .chat-bot-avtar {
@@ -288,4 +288,23 @@ button {
     100% {
       opacity: 1;
     }
+  }
+
+  /* joined message */
+  .chat-bot-joined-msg-cell{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem ;
+  }
+  .chat-bot-joined-msg-cell .chat-bot-avtar-img{
+    height: 25px;
+    width: 25px;
+  }
+  .chat-bot-joined-msg-cell .chat-bot-msg-timestamp{
+    align-self: center;
+    margin-left:0.5rem ;
+  }
+  .chat-bot-joined-msg-cell .chat-bot-msg-timestamp {
+    font-size: 0.75em;
   }
