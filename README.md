@@ -3,4 +3,9 @@ dummy chatbot ux
 
 agentforce simulator
 
-<img width="955" alt="{6AD555CB-C11A-4989-9077-8A686D9D3E88}" src="https://github.com/user-attachments/assets/e1ae449b-9f41-4b0b-9844-f335fa65f86e" />
+<img width="941" alt="{CCAF6E87-11CB-4587-A701-D78BB16D5BBE}" src="https://github.com/user-attachments/assets/1db751a9-bfdb-4d59-8cc2-4390a7cba1cc" />
+
+
+icons:
+https://www.svgrepo.com/collection/bootstrap-ui-icons/3?search=dots
+
