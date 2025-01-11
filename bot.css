@@ -110,6 +110,8 @@ button {
     /* height:  300px; */
     height: 55vh;
     overflow-y: auto;
+    display:flex ;
+    flex-direction: column-reverse;
 }
 
 .chat-footer {
