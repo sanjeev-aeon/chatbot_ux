@@ -55,9 +55,8 @@ function createBotmsgCell(msg) {
     msgContainer.textContent = msg;
     //set timestamp
     const tsContainer = clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
-    const dt = new Date()
 
-    tsContainer.textContent = dt.toLocaleTimeString();
+    tsContainer.textContent = getTimeStamp();
 
     return clone;
 }
@@ -74,9 +73,8 @@ function createHumanMsgCell(msg) {
     msgContainer.textContent = msg;
     //set timestamp
     const tsContainer = clone.querySelectorAll('.chat-human-msg-timestamp-time')[0];
-    const dt = new Date()
 
-    tsContainer.textContent = dt.toLocaleTimeString();
+    tsContainer.textContent = getTimeStamp();
 
     return clone;
 }
@@ -102,10 +100,23 @@ function botJoinedCell() {
     const clone = template.content.cloneNode(true);
     //set timestamp
     const tsContainer = clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
-    const dt = new Date()
-    tsContainer.textContent = dt.toLocaleTimeString();
+
+    tsContainer.textContent = getTimeStamp();
 
     return clone;
+}
+
+/**
+ * 
+ * @returns time stamp
+ */
+function getTimeStamp() {
+    const dt = new Date();
+    return dt.toLocaleTimeString([], {
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric'
+    });
 }
 
 function initPrompt() {
@@ -123,7 +134,7 @@ function replaceThinkingCell(node) {
     const thinkingCell = chatPrompt.querySelectorAll('.chat-thinking-msg-cell')[0];
     if (thinkingCell) {
         thinkingCell.replaceWith(node);
-    }else{
+    } else {
         chatPrompt.appendChild(node)
     }
 }
