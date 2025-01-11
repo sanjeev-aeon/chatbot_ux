@@ -32,7 +32,7 @@ function sendMessage() {
     chatPrompt.append(thinkingCell);
 }
 
-function enter() {
+function registerMessageSendOnEnter() {
     document.getElementById("chatInput").addEventListener("keypress", e => {
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
@@ -107,6 +107,17 @@ function botJoinedCell() {
 }
 
 /**
+ * Add init message
+ */
+function addBotJoiningResponse() {
+    const chatPrompt = document.getElementById('chatPrompt');
+    const botResponse = 'Agentforce can answer your support questions and connect you to support experts.';
+    const node = createBotmsgCell(botResponse);
+    chatPrompt.appendChild(node);
+    document.getElementById('botResponse').value = '';
+}
+
+/**
  * 
  * @returns time stamp
  */
@@ -145,6 +156,7 @@ document.addEventListener('DOMContentLoaded',
     (e) => {
         console.log(e);
         initPrompt();
-        enter();
+        addBotJoiningResponse();
+        registerMessageSendOnEnter();
 
     });
