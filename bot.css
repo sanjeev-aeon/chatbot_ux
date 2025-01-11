@@ -20,6 +20,7 @@ body {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
+    margin: 0 5rem 0 5rem;
 }
 
 .left {
