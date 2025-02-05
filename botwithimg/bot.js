@@ -1,10 +1,12 @@
 let fileStore = '';
+let agentName = 'Agentforce';
+
 
 function addBotResponse() {
     const chatPrompt = document.getElementById('chatPrompt');
     const botResponse = document.getElementById('botResponse').value;
     const botMessage = document.createElement('div');
-    botMessage.textContent = `Agentforce: ${botResponse}`;
+    botMessage.textContent = `${agentName}: ${botResponse}`;
     chatPrompt.appendChild(botMessage);
     document.getElementById('botResponse').value = '';
 }
@@ -42,7 +44,7 @@ function sendMessage() {
     sendFile()
     sendtxtmessage();
     // thinking status
-    const thinkingCell = createThinkingCell('Agentforce is responding...');
+    const thinkingCell = createThinkingCell(`${agentName} is responding...`);
     chatPrompt.append(thinkingCell);
 
 }
@@ -126,7 +128,7 @@ function botJoinedCell() {
  */
 function addBotJoiningResponse() {
     const chatPrompt = document.getElementById('chatPrompt');
-    const botResponse = 'Agentforce can answer your support questions and connect you to support experts.';
+    const botResponse = `${agentName} can answer your support questions and connect you to support experts.`;
     const node = createBotmsgCell(botResponse);
     chatPrompt.appendChild(node);
     document.getElementById('botResponse').value = '';
@@ -231,6 +233,16 @@ function createHumanMsgImgCell(msg) {
     tsContainer.textContent = getTimeStamp();
 
     return clone;
+}
+
+
+function updateAgentName(){
+    const agentName = document.getElementById('newName').value;
+    const nodes=document.querySelectorAll('#agentID');
+    for (const node of nodes) {
+        node.textContent = node.textContent.replace('Agentforce',agentName);
+    }
+    
 }
 
 // init

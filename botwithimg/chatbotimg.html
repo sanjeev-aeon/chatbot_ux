@@ -28,7 +28,7 @@
                         </svg>
                     </span>
                 </button>
-                <span class="chat-header-title">Agentforce</span>
+                <span class="chat-header-title" id="agentID">Agentforce</span>
                 <span class="chat-header-min">
                     <button title="minimize" class="chat-header-button ">
                         <svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +74,10 @@
 
 
     <div class="right">
+        <div class="agentName">
+            <input type="text" id="newName" placeholder="new name"></textarea>
+            <button onclick="updateAgentName()">update Agent Name</button>
+        </div>
         <div class="input-area">
             <textarea id="botResponse" placeholder="Enter bot's response"></textarea>
             <button onclick="addBotResponseCell()">Send Bot's Response</button>
@@ -93,7 +97,7 @@
                     msg
                 </div>
                 <div class="chat-bot-msg-timestamp">
-                    <span> Agentforce &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
+                    <span id="agentID"> Agentforce &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
                 </div>
             </div>
         </div>
@@ -103,7 +107,7 @@
         <div class="chat-bot-joined-msg-cell">
             <img class="chat-bot-avtar-img" src="./img/bot-avatar.png">
             <div class="chat-bot-msg-timestamp">
-                <span> Agentforce joined &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
+                <span id="agentID"> Agentforce joined &nbsp;•&nbsp;</span><span class="chat-bot-msg-timestamp-time">now</span>
             </div>
         </div>
     </template>
@@ -133,7 +137,7 @@
                 <span class="dot"></span>
             </div>
             <div class="chat-thinking-msg-container">
-                <span class="chat-thinking-msg"> Agentforce is responding... </span>
+                <span class="chat-thinking-msg" > Responding... </span>
             </div>
         </div>
     </template>
