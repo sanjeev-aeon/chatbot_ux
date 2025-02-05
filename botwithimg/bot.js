@@ -19,7 +19,7 @@ function addBotResponseCell() {
 }
 
 
-function sendMessage() {
+function sendtxtmessage() {
     const chatPrompt = document.getElementById('chatPrompt');
     const humanResponse = document.getElementById('chatInput').value;
     // const humanMessage = document.createElement('div');
@@ -27,9 +27,15 @@ function sendMessage() {
     const cell = createHumanMsgCell(humanResponse);
     chatPrompt.appendChild(cell);
     document.getElementById('chatInput').value = '';
+    
+}
+function sendMessage() {
+    sendFile()
+    sendtxtmessage();
     // thinking status
     const thinkingCell = createThinkingCell('Agentforce is responding...');
     chatPrompt.append(thinkingCell);
+   
 }
 
 function registerMessageSendOnEnter() {
@@ -166,6 +172,24 @@ function registerAttachFile() {
 
 }
 
+function sendFile() {
+    const chatPrompt = document.getElementById('chatPrompt');
+    const fileList = document.getElementById('fileList');
+    const files = fileList.children;
+    for (const file of files) {
+        const humanResponse = file.textContent;
+        const cell = createHumanMsgImgCell(humanResponse);
+        chatPrompt.appendChild(cell);
+    }
+    fileList.innerHTML = ''
+    fileInput.value = '';
+}
+
+
+function createHumanMsgImgCell(msg) {
+    console.log('createHumanMsgImgCell', msg);
+    return document.createTextNode(msg);
+}
 
 // init
 
