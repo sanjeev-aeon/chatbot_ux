@@ -1,3 +1,5 @@
+let fileStore = '';
+
 function addBotResponse() {
     const chatPrompt = document.getElementById('chatPrompt');
     const botResponse = document.getElementById('botResponse').value;
@@ -22,20 +24,27 @@ function addBotResponseCell() {
 function sendtxtmessage() {
     const chatPrompt = document.getElementById('chatPrompt');
     const humanResponse = document.getElementById('chatInput').value;
+    if (!humanResponse.trim()) {
+        return;
+    }
     // const humanMessage = document.createElement('div');
     // humanMessage.textContent = `You: ${humanResponse}`;
     const cell = createHumanMsgCell(humanResponse);
     chatPrompt.appendChild(cell);
     document.getElementById('chatInput').value = '';
-    
+
 }
+
+/**
+ * Send message txt + img
+ */
 function sendMessage() {
     sendFile()
     sendtxtmessage();
     // thinking status
     const thinkingCell = createThinkingCell('Agentforce is responding...');
     chatPrompt.append(thinkingCell);
-   
+
 }
 
 function registerMessageSendOnEnter() {
@@ -160,9 +169,10 @@ function replaceThinkingCell(node) {
  * Register file attach event
  */
 function registerAttachFile() {
-    document.getElementById('fileInput').addEventListener('change', function(event) {
+    document.getElementById('fileInput').addEventListener('change', function (event) {
         const fileList = document.getElementById('fileList');
         fileList.innerHTML = ''; // Clear the list
+        fileStore = event.target.files;
         for (const file of event.target.files) {
             const fileItem = document.createElement('div');
             fileItem.textContent = file.name;
@@ -183,12 +193,44 @@ function sendFile() {
     }
     fileList.innerHTML = ''
     fileInput.value = '';
+    fileStore = ''
 }
 
 
+/**
+ * create template cell for human response
+ * @param {*} msg 
+ * @returns cell
+ */
 function createHumanMsgImgCell(msg) {
-    console.log('createHumanMsgImgCell', msg);
-    return document.createTextNode(msg);
+    const template = document.getElementById("humanResImgCell");
+    const clone = template.content.cloneNode(true);
+    //set msg
+    const msgContainer = clone.querySelectorAll('.chat-human-msg')[0];
+    msgContainer.textContent = msg;
+    // preview
+    const preview = clone.querySelectorAll('.preview')[0];
+
+    const file = fileStore[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // Show the image
+        }
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = '#'; // Clear the preview
+        preview.style.display = 'none'; // Hide the image placeholder
+    }
+
+    //set timestamp
+    const tsContainer = clone.querySelectorAll('.chat-human-msg-timestamp-time')[0];
+
+    tsContainer.textContent = getTimeStamp();
+
+    return clone;
 }
 
 // init

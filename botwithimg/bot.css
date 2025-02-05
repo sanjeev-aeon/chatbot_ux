@@ -355,3 +355,24 @@ button {
   }
 
 /* end */
+
+/* img cell */
+
+/* .chat-human-img-msg-cell{
+   height: 100px;
+   width: 100px;
+} */
+.preview{
+    height: 100px;
+    width: 100px;
+}
+
+.chat-human-img-msg {
+    overflow-wrap: anywhere;
+    background-color: #005290;
+    color: #ffffff;
+    border-radius: 0.5rem 0.5rem  0 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 0.875em;
+    font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+}
