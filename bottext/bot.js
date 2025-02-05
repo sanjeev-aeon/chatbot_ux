@@ -150,6 +150,23 @@ function replaceThinkingCell(node) {
     }
 }
 
+/**
+ * Register file attach event
+ */
+function registerAttachFile() {
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const fileList = document.getElementById('fileList');
+        fileList.innerHTML = ''; // Clear the list
+        for (const file of event.target.files) {
+            const fileItem = document.createElement('div');
+            fileItem.textContent = file.name;
+            fileList.appendChild(fileItem);
+        }
+    });
+
+}
+
+
 // init
 
 document.addEventListener('DOMContentLoaded',
@@ -158,5 +175,6 @@ document.addEventListener('DOMContentLoaded',
         initPrompt();
         addBotJoiningResponse();
         registerMessageSendOnEnter();
+        registerAttachFile();
 
     });
