@@ -67,6 +67,9 @@ function registerMessageSendOnEnter() {
 function createBotmsgCell(msg) {
     const template = document.getElementById("botResCell");
     const clone = template.content.cloneNode(true);
+    //update agent
+   const agentNode= clone.querySelectorAll('#agentID');
+   updateAgentName2(agentNode,agentName)
     //set msg
     const msgContainer = clone.querySelectorAll('.chat-bot-msg')[0];
     msgContainer.textContent = msg;
@@ -253,8 +256,14 @@ function updateAgentName0(aName) {
     }
     document.getElementById('agentIDinH').textContent = aName;
     localStorage.setItem('agentID', aName);
+    agentName = aName;
 }
 
+function updateAgentName2(nodes,aName){
+    for (const node of nodes) {
+        node.textContent = node.textContent.replace(`Agentforce`, aName);
+    }
+}
 
 // init
 
