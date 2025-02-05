@@ -1,5 +1,5 @@
 let fileStore = '';
-let agentName = 'Agentforce';
+let agentName = localStorage.getItem('agentID') ? localStorage.getItem('agentID') : 'Agentforce';
 
 
 function addBotResponse() {
@@ -236,14 +236,25 @@ function createHumanMsgImgCell(msg) {
 }
 
 
-function updateAgentName(){
+function updateAgentName() {
     const agentName = document.getElementById('newName').value;
-    const nodes=document.querySelectorAll('#agentID');
-    for (const node of nodes) {
-        node.textContent = node.textContent.replace('Agentforce',agentName);
+    if (!agentName) {
+        return;
     }
-    
+    updateAgentName0(agentName);
+
 }
+
+function updateAgentName0(aName) {
+    const nodes = document.querySelectorAll('#agentID');
+    for (const node of nodes) {
+        node.textContent = node.textContent.replace(`Agentforce`, aName);
+        node.textContent = node.textContent.replace(`${agentName}`, aName);
+    }
+    document.getElementById('agentIDinH').textContent = aName;
+    localStorage.setItem('agentID', aName);
+}
+
 
 // init
 
@@ -254,5 +265,6 @@ document.addEventListener('DOMContentLoaded',
         addBotJoiningResponse();
         registerMessageSendOnEnter();
         registerAttachFile();
+        updateAgentName0(agentName);
 
     });
