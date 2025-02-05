@@ -329,12 +329,29 @@ button {
 
   /* file */
 .chat-footer-file{
-    padding: 10px;
-    border-right: #ccc 1px solid;
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: row;
 }
-.chat-footer-file .fileInput {
-    width: 2px;
-    height: 2px;
+.chat-footer-file .attach-button {
+    border-radius: 5px; /* Rounded corners */
+    color: #000;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+
+.pipe{
+    margin: 0 0.5rem;
+    border-left: 1px solid #ddd;
 }
+
+  .fileList{
+    flex-grow: 1;
+  }
+
+  #fileInput {
+    display: none; /* Hide the actual file input */
+  }
 
 /* end */
