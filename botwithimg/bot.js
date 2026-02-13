@@ -1,4 +1,5 @@
 let fileStore = '';
+let botFileStore = '';
 let agentName = localStorage.getItem('agentID') ? localStorage.getItem('agentID') : 'Agentforce';
 
 
@@ -186,6 +187,22 @@ function registerAttachFile() {
     });
 
 }
+/**
+ * Register file bot attach event
+ */
+function registerbotAttachFile() {
+    document.getElementById('bot-fileInput').addEventListener('change', function (event) {
+        const fileList = document.getElementById('bot-fileList');
+        fileList.innerHTML = ''; // Clear the list
+        botFileStore = event.target.files;
+        for (const file of event.target.files) {
+            const fileItem = document.createElement('div');
+            fileItem.textContent = file.name;
+            fileList.appendChild(fileItem);
+        }
+    });
+
+}
 
 function sendFile() {
     const chatPrompt = document.getElementById('chatPrompt');
@@ -265,6 +282,48 @@ function updateAgentName2(nodes,aName){
     }
 }
 
+function addBotResponseFileCell() {
+    const chatPrompt = document.getElementById('chatPrompt');
+    const botResponse = document.getElementById('botResponse').value;   
+    const node = createBotResponseFileCell(botResponse);
+    replaceThinkingCell(node);
+    document.getElementById('botResponse').value = '';  
+    document.getElementById('bot-fileList').innerHTML = '';
+    botFileStore = '';
+}
+
+// For bot response with file 
+function createBotResponseFileCell(msg) {
+ const template = document.getElementById("botResImgCell");
+    const clone = template.content.cloneNode(true);
+    //set msg
+    const msgContainer = clone.querySelectorAll('.chat-bot-msg')[0];
+    msgContainer.textContent = msg;
+    // preview
+    const preview = clone.querySelectorAll('.preview')[0];
+
+    const file = botFileStore[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block'; // Show the image
+        }
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = '#'; // Clear the preview
+        preview.style.display = 'none'; // Hide the image placeholder
+    }
+
+    //set timestamp
+    const tsContainer = clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
+
+    tsContainer.textContent = getTimeStamp();
+
+    return clone;
+}
+
 // init
 
 document.addEventListener('DOMContentLoaded',
@@ -274,6 +333,7 @@ document.addEventListener('DOMContentLoaded',
         addBotJoiningResponse();
         registerMessageSendOnEnter();
         registerAttachFile();
+        registerbotAttachFile();
         updateAgentName0(agentName);
 
     });
