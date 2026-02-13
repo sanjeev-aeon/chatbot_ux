@@ -1,6 +1,7 @@
-:root{
-    --font:sans-serif;
+:root {
+    --font: sans-serif;
 }
+
 body {
     display: flex;
     height: 100vh;
@@ -49,11 +50,12 @@ button {
     /* padding: 10px; */
 }
 
-.chat-footer-button{
+.chat-footer-button {
     height: 38px;
     width: 38px;
 }
-.icon_small{
+
+.icon_small {
     height: 20px;
     width: 20px;
 }
@@ -118,7 +120,7 @@ button {
     /* height:  300px; */
     height: 55vh;
     overflow-y: auto;
-    display:flex ;
+    display: flex;
     flex-direction: column-reverse;
 }
 
@@ -128,6 +130,7 @@ button {
     padding: 10px;
     border-top: 1px solid #ddd;
 }
+
 .chat-footer-text {
     display: flex;
     padding: 10px;
@@ -141,9 +144,10 @@ button {
     border-radius: 4px;
     outline: none;
 }
-.chat-footer-input:focus-visible  {
+
+.chat-footer-input:focus-visible {
     box-shadow: none;
-    border: 1px solid  #005290;
+    border: 1px solid #005290;
 }
 
 .chat-footer button {
@@ -155,14 +159,14 @@ button {
     margin-left: 10px;
     cursor: pointer;
     border: 1px solid #ddd;
-    
+
 }
 
 
 .chat-bot-msg-cell {
     display: flex;
     flex-direction: row;
-    margin:0.15rem 3rem 0.25rem 0;
+    margin: 0.15rem 3rem 0.25rem 0;
 }
 
 .chat-bot-avtar {
@@ -189,6 +193,15 @@ button {
     font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
 }
 
+.chat-bot-img-msg.chat-bot-img-msg-cell {
+    overflow-wrap: anywhere;
+    background-color: #f2f2f3;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
+
+}
+
 .chat-bot-msg-timestamp {
     font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
     font-size: 10px;
@@ -197,7 +210,7 @@ button {
     font-weight: 400;
 }
 
-.chat-bot-msg-timestamp-time{
+.chat-bot-msg-timestamp-time {
     font-weight: 400;
 }
 
@@ -208,7 +221,7 @@ button {
 .chat-human-msg-cell {
     display: flex;
     flex-direction: row;
-    margin:0 0 0.25rem 3rem;
+    margin: 0 0 0.25rem 3rem;
     justify-content: end;
 }
 
@@ -231,7 +244,7 @@ button {
     overflow-wrap: anywhere;
     background-color: #005290;
     color: #ffffff;
-    border-radius: 0.5rem 0.5rem  0 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     font-size: 0.875em;
     font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
@@ -245,7 +258,7 @@ button {
     font-weight: 400;
 }
 
-.chat-human-msg-timestamp-time{
+.chat-human-msg-timestamp-time {
     font-weight: 400;
 }
 
@@ -253,11 +266,12 @@ button {
 
 /* thinking msg cell */
 
-.chat-thinking-msg-cell{
+.chat-thinking-msg-cell {
     display: flex;
     flex-direction: column;
     margin-left: .25rem;
 }
+
 .chat-thinking-msg {
     font-family: "sans-serif", "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
     font-size: 10px;
@@ -275,84 +289,93 @@ button {
     border-radius: 50%;
     height: 30px;
     width: 30px;
-  }
-  
-  .dot {
+}
+
+.dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background-color: #ffffff;
     margin: 0 2px;
     animation: dot-animation 3s infinite;
-  }
-  
-  .dot:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-  
-  .dot:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-  
-  @keyframes dot-animation {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+}
 
-  /* joined message */
-  .chat-bot-joined-msg-cell{
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dot-animation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* joined message */
+.chat-bot-joined-msg-cell {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 1rem ;
-  }
-  .chat-bot-joined-msg-cell .chat-bot-avtar-img{
+    margin: 1rem;
+}
+
+.chat-bot-joined-msg-cell .chat-bot-avtar-img {
     height: 25px;
     width: 25px;
-  }
-  .chat-bot-joined-msg-cell .chat-bot-msg-timestamp{
+}
+
+.chat-bot-joined-msg-cell .chat-bot-msg-timestamp {
     align-self: center;
-    margin-left:0.5rem ;
-  }
-  .chat-bot-joined-msg-cell .chat-bot-msg-timestamp {
+    margin-left: 0.5rem;
+}
+
+.chat-bot-joined-msg-cell .chat-bot-msg-timestamp {
     font-size: 0.75em;
-  }
+}
 
 
 
-  /* file */
-.chat-footer-file{
+/* file */
+.chat-footer-file {
     /* padding: 10px; */
     display: flex;
     flex-direction: row;
 }
+
 .chat-footer-file .attach-button {
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
+    /* Rounded corners */
     color: #000;
     width: 20px;
     height: 20px;
     padding: 0;
-  }
+}
 
-.pipe{
+.pipe {
     margin: 0 0.5rem;
     border-left: 1px solid #ddd;
 }
 
-  .fileList{
+.fileList {
     flex-grow: 1;
-  }
+}
 
-  #fileInput {
-    display: none; /* Hide the actual file input */
-  }
+#fileInput,
+#bot-fileInput {
+    display: none;
+    /* Hide the actual file input */
+}
 
 /* end */
 
@@ -362,7 +385,7 @@ button {
    height: 100px;
    width: 100px;
 } */
-.preview{
+.preview {
     height: 100px;
     width: 100px;
 }
@@ -371,7 +394,7 @@ button {
     overflow-wrap: anywhere;
     background-color: #005290;
     color: #ffffff;
-    border-radius: 0.5rem 0.5rem  0 0.5rem;
+    border-radius: 0.5rem 0.5rem 0 0.5rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     font-size: 0.875em;
     font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
