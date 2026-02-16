@@ -324,6 +324,16 @@ function createBotResponseFileCell(msg) {
     return clone;
 }
 
+
+//config    
+function apply(){
+    const width = document.getElementById('promptWidth').value; 
+    const chatContainer = document.querySelector('.chat-container');
+    if(width && chatContainer){
+        chatContainer.style.width = `${width}px`;
+    }       
+}
+
 // init
 
 document.addEventListener('DOMContentLoaded',
