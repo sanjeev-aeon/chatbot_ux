@@ -422,3 +422,16 @@ button {
     font-size: 0.875em;
     font-family: var(--font, Arial, sans-serif), "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Android Emoji", "Noto Color Emoji", "EmojiOne Color";
 }
+
+.prompt-config {
+    display: flex;
+    flex-direction: column;
+    border: #ccc solid 1px;
+    padding: 5px;
+    margin-top: 20px;
+
+}
+
+.conf {
+    margin-bottom: 5px;
+}
