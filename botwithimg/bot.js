@@ -73,7 +73,7 @@ function createBotmsgCell(msg) {
    updateAgentName2(agentNode,agentName)
     //set msg
     const msgContainer = clone.querySelectorAll('.chat-bot-msg')[0];
-    msgContainer.textContent = msg;
+    msgContainer.innerHTML = msg;
     //set timestamp
     const tsContainer = clone.querySelectorAll('.chat-bot-msg-timestamp-time')[0];
 
@@ -298,7 +298,7 @@ function createBotResponseFileCell(msg) {
     const clone = template.content.cloneNode(true);
     //set msg
     const msgContainer = clone.querySelectorAll('.chat-bot-msg')[0];
-    msgContainer.textContent = msg;
+    msgContainer.innerHTML = msg;
     // preview
     const preview = clone.querySelectorAll('.preview')[0];
 
