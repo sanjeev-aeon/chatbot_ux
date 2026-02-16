@@ -10,89 +10,95 @@
 </head>
 
 <body>
-    <div class="left">
-        <!-- <div class="chat-prompt" id="chatPrompt"></div> -->
-        <div class="chat-container">
-            <div class="chat-header chat-header-container">
-                <button title="more" class="chat-header-button chat-header-more">
-                    <span>
-                        <svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                            fill="#ffffff" class="bi bi-three-dots-vertical">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path
-                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
-                                </path>
-                            </g>
-                        </svg>
+    <div class="main-container">
+        <div class="left">
+            <!-- <div class="chat-prompt" id="chatPrompt"></div> -->
+            <div class="chat-container">
+                <div class="chat-header chat-header-container">
+                    <button title="more" class="chat-header-button chat-header-more">
+                        <span>
+                            <svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                fill="#ffffff" class="bi bi-three-dots-vertical">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </span>
+                    </button>
+                    <span class="chat-header-title" id="agentIDinH">Agentforce</span>
+                    <span class="chat-header-min">
+                        <button title="minimize" class="chat-header-button ">
+                            <svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                fill="#ffffff" class="bi bi-chevron-down">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </button>
                     </span>
-                </button>
-                <span class="chat-header-title" id="agentIDinH">Agentforce</span>
-                <span class="chat-header-min">
-                    <button title="minimize" class="chat-header-button ">
-                        <svg width="25px" height="25px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                            fill="#ffffff" class="bi bi-chevron-down">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                                </path>
-                            </g>
-                        </svg>
-                    </button>
-                </span>
-            </div>
-            <div class="chat-body" id="chatPrompt2">
-                <div id="chatPrompt"></div>
-                <!-- Chat messages will appear here -->
-            </div>
-            <div class="chat-footer">
-                <div class="chat-footer-text">
-                    <input type="text" id="chatInput" class="chat-footer-input" placeholder="Type your message...">
-                    <button class="chat-footer-button" onclick="sendMessage()">
-                        <svg focusable="false" viewBox="0 0 520 520" class="icon_small">
-                            <g>
-                                <path
-                                    d="M21 445l44-163h186c5 0 10-5 10-10v-20c0-5-5-10-10-10H65L22 82l-2-8c0-7 7-14 15-13l5 1 450 185c6 2 10 8 10 14s-4 11-9 13L40 464l-6 1c-8-1-14-7-14-15z">
-                                </path>
-                            </g>
-                        </svg>
-                    </button>
                 </div>
-                <div class="chat-footer-file">
-                    <button class="attach-button" onclick="document.getElementById('fileInput').click()">@</button>
-                    <input type="file" id="fileInput" multiple>
-                    <div id="pipe" class="pipe"></div>
-                    <div id="fileList" class="fileList"></div>
+                <div class="chat-body-footer">
+                    <div class="chat-body" id="chatPrompt2">
+                        <div id="chatPrompt"></div>
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <div class="chat-footer">
+                        <div class="chat-footer-text">
+                            <input type="text" id="chatInput" class="chat-footer-input"
+                                placeholder="Type your message...">
+                            <button class="chat-footer-button" onclick="sendMessage()">
+                                <svg focusable="false" viewBox="0 0 520 520" class="icon_small">
+                                    <g>
+                                        <path
+                                            d="M21 445l44-163h186c5 0 10-5 10-10v-20c0-5-5-10-10-10H65L22 82l-2-8c0-7 7-14 15-13l5 1 450 185c6 2 10 8 10 14s-4 11-9 13L40 464l-6 1c-8-1-14-7-14-15z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="chat-footer-file">
+                            <button class="attach-button"
+                                onclick="document.getElementById('fileInput').click()">@</button>
+                            <input type="file" id="fileInput" multiple>
+                            <div id="pipe" class="pipe"></div>
+                            <div id="fileList" class="fileList"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
 
-
-    <div class="right">
-        <div class="agentName">
-            <input type="text" id="newName" placeholder="new name"></textarea>
-            <button onclick="updateAgentName()">update Agent Name</button>
-        </div>
-        <div class="input-area">
-            <textarea id="botResponse" placeholder="Enter bot's response"></textarea>
-            <button onclick="addBotResponseCell()">Send Bot's Response</button>
-        </div>
-        <div class="attachment-area">
-            <div class="bot-attachment-file">
-                <button class="bot-attach-button" onclick="document.getElementById('bot-fileInput').click()">@</button>
-                <input type="file" id="bot-fileInput" multiple>
-                <div id="bot-fileList" class="bot-fileList"></div>
+        <div class="right">
+            <div class="agentName">
+                <input type="text" id="newName" placeholder="new name"></textarea>
+                <button onclick="updateAgentName()">update Agent Name</button>
             </div>
-            <button onclick="addBotResponseFileCell()">Send Bot's text and image Response</button>
+            <div class="input-area">
+                <textarea id="botResponse" placeholder="Enter bot's response"></textarea>
+                <button onclick="addBotResponseCell()">Send Bot's Response</button>
+            </div>
+            <div class="attachment-area">
+                <div class="bot-attachment-file">
+                    <button class="bot-attach-button"
+                        onclick="document.getElementById('bot-fileInput').click()">@</button>
+                    <input type="file" id="bot-fileInput" multiple>
+                    <div id="bot-fileList" class="bot-fileList"></div>
+                </div>
+                <button onclick="addBotResponseFileCell()">Send Bot's text and image Response</button>
+            </div>
+
         </div>
-
     </div>
-
 
 
     <template id="botResCell">
